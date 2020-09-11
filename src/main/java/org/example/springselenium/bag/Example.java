@@ -1,4 +1,4 @@
-package org.example.springselenium.config.bag;
+package org.example.springselenium.bag;
 
 import org.springframework.stereotype.Component;
 
