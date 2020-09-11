@@ -1,9 +1,9 @@
-#Selenium Spring Testing project
+# Selenium Spring Testing project
 
-#Motivation
+# Motivation
 I decided to create a selenium webdriver project using spring as a DI approach.
 
-#Demo
+# Demo
 
 TODO
 
