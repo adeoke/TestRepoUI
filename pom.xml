@@ -13,11 +13,27 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.plugin.version>3.0.0-M5</maven.plugin.version>
+        <webdriver.manager.version>4.2.0</webdriver.manager.version>
         <spring.version>5.2.8.RELEASE</spring.version>
         <junit.version>5.6.2</junit.version>
+        <selenium.version>3.0.0</selenium.version>
     </properties>
 
     <dependencies>
+        <!-- webdrivermanager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdriver.manager.version}</version>
+        </dependency>
+
+        <!-- selenium ui testing -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+
         <!-- maven -->
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
@@ -44,6 +60,7 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Testing Libs -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>

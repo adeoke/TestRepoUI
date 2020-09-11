@@ -4,6 +4,7 @@ import org.example.springselenium.config.Config;
 import org.example.springselenium.bag.Example;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -14,5 +15,10 @@ public class TestInjection {
     @Test
     public void hereWeGo(@Autowired Example example) {
         example.load();
+    }
+
+    @Test
+    public void browserStart(@Autowired WebDriver driver) {
+        driver.get("http://www.bing.com");
     }
 }
