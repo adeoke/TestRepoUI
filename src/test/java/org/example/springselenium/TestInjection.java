@@ -2,6 +2,7 @@ package org.example.springselenium;
 
 import org.example.springselenium.config.Config;
 import org.example.springselenium.bag.Example;
+import org.example.springselenium.helpers.ScreenshotHelper;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -11,6 +12,8 @@ import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import java.nio.file.Paths;
 
 public class TestInjection {
     @ExtendWith(SpringExtension.class)
@@ -29,12 +32,15 @@ public class TestInjection {
     @Nested
     @DisplayName("Test injection with selenium webdriver object")
     class Aut {
+        private final String screenshotsDir = Paths.get(System.getProperty("user.dir"), "screenshots").toString();
         @Autowired
         private WebDriver driver;
 
         @Test
-        public void browserStart() {
+        public void browserStart() throws Exception {
             driver.get("http://www.bing.com");
+            System.out.println("screenshotsDir: \n" + screenshotsDir);
+            ScreenshotHelper.takeSnapShot(driver, screenshotsDir + "/image.png");
         }
 
         @AfterEach
