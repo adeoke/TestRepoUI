@@ -17,6 +17,7 @@
         <spring.version>5.2.8.RELEASE</spring.version>
         <junit.version>5.6.2</junit.version>
         <selenium.version>3.0.0</selenium.version>
+        <restassured.version>3.3.0</restassured.version>
     </properties>
 
     <dependencies>
@@ -58,6 +59,13 @@
             <artifactId>spring-test</artifactId>
             <version>${spring.version}</version>
             <scope>test</scope>
+        </dependency>
+
+        <!--Restassured - rest client-->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${restassured.version}</version>
         </dependency>
 
         <!-- Testing Libs -->
